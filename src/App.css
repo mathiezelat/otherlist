@@ -1,38 +1,107 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+
+@property --gradient-start {
+    syntax: "<color>";
+    initial-value: transparent;
+    inherits: false;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@property --gradient-end {
+    syntax: "<color>";
+    initial-value: transparent;
+    inherits: false;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container-new-tarea{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    height: 10vh;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.newTarea{
+    background-color: #282f449f;
+    color: whitesmoke;
+    border: none;
+    padding: 5px 15px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
 }
-
-.App-link {
-  color: #61dafb;
+.newTarea:focus-visible{
+    outline: none;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.newTarea::placeholder{
+    color: rgba(255, 255, 255, 0.199);
+}
+.faltanTareas{
+    margin: auto;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: whitesmoke;
+    font-weight: 700;
+    font-family: 'Nunito', sans-serif;
+}
+.container-app{
+    --gradient-start: #191D32;
+    --gradient-end: #161b35;
+    background: linear-gradient(155deg, var(--gradient-start), var(--gradient-end));
+    height: 100vh;
+    transition: 1s --gradient-start, 1s --gradient-end;
+    -webkit-transition: 1s --gradient-start, 1s --gradient-end;
+    -moz-transition: 1s --gradient-start, 1s --gradient-end;
+    -ms-transition: 1s --gradient-start, 1s --gradient-end;
+    -o-transition: 1s --gradient-start, 1s --gradient-end;
+    animation: background infinite alternate-reverse 3s;
+    -webkit-animation: background infinite alternate-reverse 3s;
+}
+@keyframes background {
+    to{
+        --gradient-start: #191D32;
+        --gradient-end: #210d58;;
+    }
+    from{
+        --gradient-start: #210d58;;
+        --gradient-end: #191D32;
+    }
+}
+button{
+    background: rgba(0, 0, 0, 0.096);
+    border: none;
+    margin-left: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    transition: filter 0.2s;
+    -webkit-transition: filter 0.2s;
+    -moz-transition: filter 0.2s;
+    -ms-transition: filter 0.2s;
+    -o-transition: filter 0.2s;
+}
+.img-inicio {
+    width: 40px;
+    user-select: none;
+}
+.btn-img:hover{
+    filter: opacity(0.7);
+    -webkit-filter: opacity(0.7);
+}
+h1{
+    margin: 0;
+    text-align: center;
+    padding-top: 10vw;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.123);
 }
