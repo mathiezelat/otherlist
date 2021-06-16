@@ -18,4 +18,4 @@ npm build
 Se puede agregar, eliminar notas y marcar si una nota ya fue realizada y este se guarda en el localStorage.
 
 ## Link de la Aplicación web
-[otherlist](https://app.netlify.com/sites/otherlist/overview)
+[otherlist](https://otherlist.netlify.app/)
