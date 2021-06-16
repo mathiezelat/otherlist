@@ -52,7 +52,8 @@
     --gradient-start: #191D32;
     --gradient-end: #161b35;
     background: linear-gradient(155deg, var(--gradient-start), var(--gradient-end));
-    height: 100vh;
+    min-height: 100vh;
+    padding-bottom: 10px;
     transition: 1s --gradient-start, 1s --gradient-end;
     -webkit-transition: 1s --gradient-start, 1s --gradient-end;
     -moz-transition: 1s --gradient-start, 1s --gradient-end;

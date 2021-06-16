@@ -25,7 +25,8 @@ function App() {
     todo.completed = !todo.completed;
     setTodos(newTodos);
   }
-  const handleTodoAdd = () =>{
+  const handleTodoAdd = (e) =>{
+    e.preventDefault()
     const task = todoTaskRef.current.value;
     if ( task === '') return;
     setTodos((prevTodos)=>{
@@ -44,11 +45,11 @@ function App() {
   return (
     <div className="container-app">
         <h1>otherlist</h1>
-      <div className="container-new-tarea">
+      <form onSubmit={handleTodoAdd} className="container-new-tarea">
         <input className="newTarea" ref={todoTaskRef} type="text" placeholder="Nueva Tarea" />
         <button className="btn-img" onClick={handleTodoAdd}><img className="img-inicio" src="/img/icons_plus.svg" alt="" /></button>
         <button className="btn-img" onClick={handleClearAll}><img className="img-inicio" src="/img/icons_cancel.svg" alt="" /></button>
-      </div>
+      </form>
         <h3 className="faltanTareas">Te quedan {todos.filter((todo)=>!todo.completed).length} tareas por terminar</h3>
         <TodoList todos={todos} toggleTodo={toggleTodo} handleClear={handleClear} />
     </div>
